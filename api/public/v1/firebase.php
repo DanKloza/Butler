@@ -37,15 +37,15 @@ class ButlerBase {
             'tasks' => []
         ]);
         //var_dump($user_conf);
-        var_dump($user_conf);
+        //var_dump($user_conf);
     }
 }
 
-$bb = new ButlerBase();
-$bb->create_user("+17738291129", "Andriy");
-$bb->add_task_to_user("+17738291129", "walk the dog", strtotime("14:00 next thursday"));
-$result = $bb->get_user("+17738291129");
-var_dump($result);
+//$bb = new ButlerBase();
+//$bb->create_user("+17738291129", "Andriy");
+//$bb->add_task_to_user("+17738291129", "walk the dog", strtotime("14:00 next thursday"));
+//$result = $bb->get_user("+17738291129");
+//var_dump($result);
 
 //$bb->create_user("lil dicky");
 //$bb->create_user("lil wayne");
