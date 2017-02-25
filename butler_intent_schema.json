@@ -1,0 +1,25 @@
+{
+  "intents": [
+    {
+      "intent": "GetItem"
+    },
+    {
+      "intent": "AddItem",
+      "slots": [
+        {
+          "name": "Subject",
+          "type": "AMAZON.EventType"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}
