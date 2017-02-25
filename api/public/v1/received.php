@@ -1,4 +1,8 @@
 <?php
+include __DIR__."/firebase.php"
+
+$bb = new ButlerBase();
+$
 
 $from = $_POST["From"];
 $msg  = $_POST["Body"];
@@ -10,6 +14,7 @@ $result = array();
 
 if (preg_match("/Remind me to (.*) at ([0-9][0-9]:[0-9][0-9])/i", $msg ,$result)) {
     $matches = 1;
+    // add to db task
 }
 
 ?>

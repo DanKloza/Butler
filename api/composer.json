@@ -1,6 +1,7 @@
 {
     "require": {
         "monolog/monolog": "1.0.*",
-        "symfony/symfony": "^3.1"
+        "symfony/symfony": "^3.1",
+        "kreait/firebase-php": "^2.0"
     }
 }
