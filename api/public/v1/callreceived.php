@@ -10,5 +10,8 @@
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 <Response>
-    <Say>Hello <?php echo $name; ?></Say>
+<Reject reason="busy" />
+    <!--<Say>Hello </Say>-->
+    <!--<Dial>+17739547365</Dial>-->
+    <!--<Play>http://www.youtubeinmp3.com/download/get/?i=k1MakL%2FYlh6KUtEHqyQlg9XwtUUWO</Play>-->
 </Response>

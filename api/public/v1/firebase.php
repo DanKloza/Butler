@@ -1,5 +1,5 @@
 <?php
-require '../../vendor/autoload.php';
+require __DIR__.'/../../vendor/autoload.php';
 
 class ButlerBase {
 
@@ -9,6 +9,10 @@ class ButlerBase {
     function __construct() {
         $this->firebase_instance = Firebase::fromServiceAccount(__DIR__.'/../../src/resources/FireBaseButler.json');
         $this->firebase_database = $this->firebase_instance->getDatabase();
+    }
+
+    public function get_db() {
+        return $this->firebase_database;
     }
 
     public function get_user ($phone) {
@@ -41,7 +45,14 @@ class ButlerBase {
     }
 }
 
-//$bb = new ButlerBase();
+$bb = new ButlerBase();
+$db = $bb->get_db();
+
+$user_conf = $db->getReference("userids/123")->set([
+    'id' => "123",
+    'token' => "YTBFHFELNH"
+]);
+
 //$bb->create_user("+17738291129", "Andriy");
 //$bb->add_task_to_user("+17738291129", "walk the dog", strtotime("14:00 next thursday"));
 //$result = $bb->get_user("+17738291129");
