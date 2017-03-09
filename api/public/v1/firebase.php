@@ -53,9 +53,9 @@ $user_conf = $db->getReference("userids/123")->set([
     'token' => "YTBFHFELNH"
 ]);
 
-//$bb->create_user("+17738291129", "Andriy");
-//$bb->add_task_to_user("+17738291129", "walk the dog", strtotime("14:00 next thursday"));
-//$result = $bb->get_user("+17738291129");
+//$bb->create_user("+17730000000", "Andriy");
+//$bb->add_task_to_user("+17730000000", "walk the dog", strtotime("14:00 next thursday"));
+//$result = $bb->get_user("+17730000000");
 //var_dump($result);
 
 //$bb->create_user("lil dicky");
