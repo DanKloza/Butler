@@ -31,10 +31,12 @@ def on_intent(intent_request, session):
     intent = intent_request["intent"]
 
     intent_name = intent_request["intent"]["name"]
+    user_id = session["user"]["userId"]
     print("The intent name is: " + intent_name)
+    print("The user_id is: " + user_id)
 
     if intent_name == "AddItem":
-        return add_item(intent)
+        return add_item(intent, user_id)
     elif intent_name == "GetItem":
         return get_item()
     elif intent_name == "AMAZON.HelpIntent":
@@ -62,17 +64,22 @@ def handle_session_end_request():
                                                    should_end_session))
 
 
-def add_item(intent):
+def add_item(intent, user_id):
     card_title = "It's cookin' time homeboy"
 
     if "Subject" in intent["slots"]:
         subject = intent["slots"]["Subject"]["value"]
 
     if "my" in subject:
+        output = subject.replace("my", "your")
         speech_output = "Okay, I'll remind you to " + \
-            subject.replace("my", "your")
+            output
     else:
-        speech_output = "Okay, I'll remind you to " + subject
+        output = subject
+        speech_output = "Okay, I'll remind you to " + output
+
+    data = {}
+    data["name"] = "boss"
 
     should_end_session = True
     return build_response({}, build_speechlet_response(card_title,
